@@ -186,7 +186,7 @@ $('grid').innerHTML=PROJECTS.map(function(p,i){
 $('grid').onclick=function(e){var b=e.target.closest('.pc');if(b)openP(PROJECTS[b.dataset.i])};
 function openP(p){
   mbx.innerHTML='<button class="x" aria-label="Tutup">✕</button><h3>'+p.t+'</h3><div class="cat">'+p.c+'</div><p>'+p.d+'</p><div class="chips">'+p.tags.map(function(t){return '<span>'+t+'</span>'}).join('')+'</div>'+
-   (p.link?'<a class="go" href="'+p.link+'" target="_blank" rel="noopener">Lihat proyek ↗</a>':'')+
+   (p.link?'<a class="go" href="'+p.link+'" target="_blank" rel="noopener">See more ↗</a>':'')+
    p.imgs.map(function(u){return '<img src="'+u+'" alt="'+p.t+'" loading="lazy" onerror="this.remove()">'}).join('');
   mod.classList.add('on');mbx.scrollTop=0}
 function closeP(){mod.classList.remove('on')}
