@@ -176,11 +176,11 @@ function tick(){
   setTimeout(tick,d)
 }
 var PROJECTS=[
- {t:'Website Project',c:'E-commerce Website · 2026',e:'🛒',d:'E-commerce website named murazon that selling kitchen stuff and not using payment gateway.',tags:['Laravel','CSS/JS'],link:'https://www.murazon.com',imgs:['assets/projects/murazon-1.webp']},
- {t:'Poster Design',c:'Design Graphic · 2025',e:'🎨',d:'Poster for persona; social media.',tags:['Photoshop'],link:'',imgs:['assets/projects/poster-1.webp']},
- {t:'Poster Design - 2',c:'Design Graphic · 2025',e:'📱',d:'Poster for group/personal social media.',tags:['Photoshop'],link:'',imgs:['assets/projects/poster-2.webp']},
- {t:'UI/UX Design - 2',c:'UI Design · 2025',e:'📱',d:'Deskripsi proyek UI kamu.',tags:['Figma'],link:'https://www.figma.com/design/cHVXjNks3tZ1dMnr0gGsND/Porto-UI-UX-Mobile-and-Website?t=oG9D62hzGRtohrcb-1',imgs:['assets/projects/uiux-1.webp']},
- {t: 'Mobile Project',c:'Easy Inventory · 2026', e:'📱',d:'Building Household inventory management using ocr Tech.',tags:['Flutter'],link:'',imgs:['assets/projects/mobile-1.webp']},
+ {t:'Website Project',c:'E-commerce Website · 2026',e:'',d:'E-commerce website named murazon that selling kitchen stuff and not using payment gateway.',tags:['Laravel','CSS/JS'],link:'https://www.murazon.com',imgs:['assets/projects/murazon-1.webp']},
+ {t:'Poster Design',c:'Design Graphic · 2025',e:'',d:'Poster for persona; social media.',tags:['Photoshop'],link:'',imgs:['assets/projects/poster-1.webp']},
+ {t:'Poster Design - 2',c:'Design Graphic · 2025',e:'',d:'Poster for group/personal social media.',tags:['Photoshop'],link:'',imgs:['assets/projects/poster-2.webp']},
+ {t:'UI/UX Design - 2',c:'UI Design · 2025',e:'',d:'UI/UX design for Uni Project called Schedu.',tags:['Figma'],link:'https://www.figma.com/design/cHVXjNks3tZ1dMnr0gGsND/Porto-UI-UX-Mobile-and-Website?t=oG9D62hzGRtohrcb-1',imgs:['assets/projects/uiux-1.webp']},
+ {t: 'Mobile Project',c:'Easy Inventory · 2026', e:'',d:'Building Household inventory management using ocr Tech.',tags:['Flutter'],link:'',imgs:['assets/projects/mobile-1.webp']},
 ];
 var mod=$('mod'),mbx=$('mb');
 $('grid').innerHTML=PROJECTS.map(function(p,i){
@@ -198,10 +198,7 @@ addEventListener('keydown',function(e){if(e.key==='Escape')closeP()});
 document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){
   document.querySelectorAll('.tabs button,.pane').forEach(function(x){x.classList.remove('a')});
   b.classList.add('a');$(b.dataset.t).classList.add('a')}});
-/* ---- views ---- */
-var n=1;try{n=(+localStorage.getItem('v')||0)+1;localStorage.setItem('v',n)}catch(e){}
-$('views').textContent='👁 '+n.toLocaleString()+' views';
-/* ---- video (skip on mobile / data saver) ---- */
+var n=1;try{n=(+localStorage.getItem('v')||0)+1;localStorage.setItem('v',n)}catch(e){};
 var cn=navigator.connection||{};
 if(innerWidth>700&&!cn.saveData&&!matchMedia('(prefers-reduced-motion:reduce)').matches){var v=$('bgv');v.src=v.dataset.src;v.play().catch(function(){})}else $('bgv').remove();
 /* ---- tilt + cursor (rAF throttled) ---- */
